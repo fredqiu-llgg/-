@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日本生活誌 | Japan Life Log</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">JAPAN LOG.</div>
+            <ul>
+                <li><a href="#">首頁</a></li>
+                <li><a href="#">攝影</a></li>
+                <li><a href="#">關於我</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>記錄在東京與各地的每一刻。</h1>
+        <p>探索街頭、節氣與日常的細微美感。</p>
+    </section>
+
+    <main class="container">
+        <section class="post-grid">
+            
+            <article class="post-card">
+                <div class="post-image" style="background-image: url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=2070&auto=format&fit=crop');"></div>
+                <div class="post-content">
+                    <span class="category">探索</span>
+                    <h2>午後的散步：靜謐的住宅區</h2>
+                    <p>在快節奏的城市中，尋找那些被遺忘的角落...</p>
+                    <a href="#" class="read-more">閱讀更多 →</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <div class="post-image" style="background-image: url('https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=2092&auto=format&fit=crop');"></div>
+                <div class="post-content">
+                    <span class="category">美食</span>
+                    <h2>和菓子的美學與季節感</h2>
+                    <p>每一口點心，都承載著季節轉變的視覺與味覺驚喜...</p>
+                    <a href="#" class="read-more">閱讀更多 →</a>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 JAPAN LOG. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
