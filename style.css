@@ -127,3 +127,19 @@ nav a {
     .post-row { flex-direction: column; gap: 10px; }
     .post-title { text-align: left; font-size: 1.2rem; }
 }
+/* 讓文章清單在滑鼠移過去時，文字微幅變色 */
+.post-row:hover .post-title {
+    color:#f9f9f9; /* 換成一個優雅的棕色或深綠色 */
+    transition: color 0.3s ease;
+}
+
+/* 增加一個簡單的進場漸顯效果給內頁照片 */
+.post-content img {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
