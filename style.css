@@ -58,14 +58,16 @@ nav a {
 }
 
 /* 標題進場動畫 */
+/* 標題進場動畫 - 讓它更緩慢優雅 */
 .hero h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(3rem, 8vw, 6rem); /* 根據螢幕大小自動縮放文字 */
+    font-size: clamp(3rem, 8vw, 6rem);
     line-height: 1;
     margin: 0;
     opacity: 0;
     transform: translateY(30px);
-    animation: fadeInUp 1s ease forwards 0.5s; /* 延遲 0.5 秒開始 */
+    /* 修改這裡：1.5s 是動畫跑多久，1s 是網頁打開後等多久才開始跑 */
+    animation: fadeInUp 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.8s;
 }
 
 .hero p {
@@ -74,7 +76,8 @@ nav a {
     margin-top: 30px;
     max-width: 500px;
     opacity: 0;
-    animation: fadeInUp 1s ease forwards 0.8s;
+    /* 修改這裡：讓副標題比主標題更晚一點點出現，形成層次感 */
+    animation: fadeInUp 2s cubic-bezier(0.16, 1, 0.3, 1) forwards 1.2s;
 }
 
 /* 4. 清單式佈局 (仿 ANRI 新聞頁面) */
@@ -169,4 +172,14 @@ nav a:hover::after {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* 讓左上角的 Logo (名字) 在滑鼠移過去時變色 */
+.logo {
+    transition: color 0.8s ease; /* 讓變色過程平滑 */
+    cursor: pointer; /* 讓滑鼠移上去時變成手指形狀 */
+}
+
+.logo:hover {
+    color: #bfa07d; /* 這裡可以換成你喜歡的顏色，例如原本設定的棕金色 */
 }
