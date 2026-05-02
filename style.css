@@ -1,129 +1,129 @@
- /* 基礎設定 */
+ /* 1. 引入專業字體 - 這是質感的靈魂 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+
+:root {
+    --bg: #ffffff;
+    --text: #000000;
+    --gray: #999999;
+    --line: #eeeeee;
+}
+
 body {
     margin: 0;
-    padding: 0;
-    font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
-    color: #333;
-    background-color: #fafafa;
-    line-height: 1.6;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
 }
 
-/* 導航欄 */
+/* 2. 導航列優化 */
 header {
-    background-color: #fff;
-    padding: 20px 0;
-    border-bottom: 1px solid #eee;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-nav {
+    padding: 30px 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
+    border-bottom: 1px solid var(--line);
 }
 
 .logo {
-    font-weight: 700;
+    font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
-    letter-spacing: 2px;
+    letter-spacing: -1px;
 }
 
 nav ul {
-    list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
 }
 
 nav a {
     text-decoration: none;
-    color: #666;
-    font-size: 0.9rem;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: #000;
-}
-
-/* 主視覺 */
-.hero {
-    text-align: center;
-    padding: 100px 20px;
-    background-color: #fff;
-}
-
-.hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    font-weight: 300;
-}
-
-/* 內容區排版 */
-.container {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-.post-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-}
-
-/* 文章卡片 */
-.post-card {
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-
-.post-card:hover {
-    transform: translateY(-5px);
-}
-
-.post-image {
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-}
-
-.post-content {
-    padding: 25px;
-}
-
-.category {
-    font-size: 0.75rem;
-    color: #bfa07d;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.post-content h2 {
-    margin: 10px 0;
-    font-size: 1.25rem;
-}
-
-.read-more {
-    display: inline-block;
-    margin-top: 15px;
-    text-decoration: none;
-    color: #333;
-    font-size: 0.85rem;
-    font-weight: bold;
-}
-
-/* 頁尾 */
-footer {
-    text-align: center;
-    padding: 60px 20px;
+    color: var(--text);
     font-size: 0.8rem;
-    color: #999;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* 3. 【重點】一打開網頁的視覺特效 (Hero Section) */
+.hero {
+    height: 85vh;
+    padding: 0 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid var(--text); /* ANRI 風格的底部粗線 */
+}
+
+/* 標題進場動畫 */
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 8vw, 6rem); /* 根據螢幕大小自動縮放文字 */
+    line-height: 1;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards 0.5s; /* 延遲 0.5 秒開始 */
+}
+
+.hero p {
+    font-size: 1rem;
+    color: var(--gray);
+    margin-top: 30px;
+    max-width: 500px;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards 0.8s;
+}
+
+/* 4. 清單式佈局 (仿 ANRI 新聞頁面) */
+.content-section {
+    padding: 100px 60px;
+}
+
+.post-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--line);
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.4s ease;
+}
+
+.post-row:hover {
+    padding-left: 20px;
+    background-color: #fafafa;
+}
+
+.post-info {
+    display: flex;
+    gap: 40px;
+    color: var(--gray);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.post-title {
+    font-size: 1.5rem;
+    font-weight: 300;
+    flex: 1;
+    text-align: right;
+}
+
+/* 定義動畫軌跡 */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 手機版適應 */
+@media (max-width: 768px) {
+    header, .hero, .content-section { padding: 20px; }
+    .post-row { flex-direction: column; gap: 10px; }
+    .post-title { text-align: left; font-size: 1.2rem; }
 }
